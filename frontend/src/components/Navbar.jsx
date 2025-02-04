@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { assets } from '../assets/assets';
 import { Link, NavLink } from 'react-router-dom';
+import { shopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { getCartCount } = useContext(shopContext);
   return (
     <div>
       {/* Normal Navbar (hidden when menuOpen is true) */}
@@ -40,7 +41,7 @@ const Navbar = () => {
           <div className='flex items-center relative cursor-pointer'>
             <NavLink to={'/cart'}>
               <img src={assets.cart_icon} className='w-5 h-5 cursor-pointer' alt="Cart Icon" />
-              <span className='text-xs absolute bottom-[-8px] rounded-full bg-black text-white right-[-5px] p-0.5'>10</span>
+              <span className='text-xs absolute bottom-[-8px] rounded-full bg-black text-white right-[-5px] p-0.5'>{getCartCount()}</span>
             </NavLink>
           </div>
         </div>
