@@ -1,5 +1,6 @@
 package com.ecommerce.ecommerce_app.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -8,7 +9,9 @@ public class User {
 	
 	private String name;
 	@Id
+	@Column(unique = true, nullable = false)
 	private String email;
+	@Column( nullable = false)
 	private String password;
 	
 	public String getName() {
