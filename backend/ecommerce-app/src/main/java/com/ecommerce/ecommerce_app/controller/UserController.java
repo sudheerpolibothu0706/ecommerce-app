@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.ecommerce_app.model.User;
 import com.ecommerce.ecommerce_app.service.UserService;
 
-
+//user controller
 
 
 @RestController
